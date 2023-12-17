@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+html {
+  box-sizing: border-box;
+}
+
 img {
   display: block;
 }
@@ -135,7 +139,10 @@ body {
   bottom: -1px;
 }
 
-.menu-active,
+.menu-active {
+  color: var(--ocean);
+}
+
 .contact-info:hover,
 .contact-info:focus {
   color: var(--ocean);
@@ -179,7 +186,7 @@ li > .link:focus {
   max-width: 1440px;
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
-  background-size: cover;
+  background-size: 1440px, 1440px;
 }
 
 .hero-text {
@@ -356,11 +363,9 @@ li > .link:focus {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.socmed-icon-link {
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 .socmed-icon-link:hover,
 .socmed-icon-link:focus {
   background-color: var(--ocean);
@@ -474,7 +479,7 @@ li > .link:focus {
 }
 
 .footer-socmed-links {
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-socmed-links:hover,
@@ -546,4 +551,23 @@ li > .link:focus {
 .product-info.link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+/* Modal Window */
+
+.modal-close {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.04);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
