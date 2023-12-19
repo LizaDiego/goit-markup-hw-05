@@ -3,15 +3,9 @@
 * {
   margin: 0;
   padding: 0;
-}
-
-html {
   box-sizing: border-box;
 }
 
-img {
-  display: block;
-}
 /* Variables */
 :root {
   --iris: #4d5ae5;
@@ -101,24 +95,21 @@ body {
   letter-spacing: 0.02em;
 }
 
-.menu-nav-link {
-  padding: 24px 0;
+.menu-active.link {
+  color: var(--ocean);
   position: relative;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.menu-nav-link::after {
+.menu-active::after {
   content: '';
-  border: 2px solid transparent;
+  background-color: var(--ocean);
   position: absolute;
   left: 0;
-  bottom: -1px;
+  bottom: -28px;
   height: 4px;
-  width: 0;
+  width: 100%;
   border-radius: 2px;
-  transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-nav-link:hover::after,
@@ -126,31 +117,6 @@ body {
   border: 2px solid var(--ocean);
   background-color: var(--ocean);
   width: 100%;
-}
-
-.menu-active::after {
-  content: '';
-  border: 2px solid var(--ocean);
-  background-color: var(--ocean);
-  border-radius: 2px;
-  height: 4px;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-}
-
-.menu-active {
-  color: var(--ocean);
-}
-
-.contact-info:hover,
-.contact-info:focus {
-  color: var(--ocean);
-}
-
-.contact-info {
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Address */
@@ -170,6 +136,14 @@ body {
   letter-spacing: 0.02em;
 }
 
+.contact-info:hover,
+.contact-info:focus {
+  color: var(--ocean);
+}
+
+.contact-info {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 li > .link:hover,
 li > .link:focus {
   color: var(--ocean);
@@ -215,9 +189,6 @@ li > .link:focus {
   border: none;
   border-radius: 4px;
   margin: 0 auto;
-}
-
-.hero-button {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -401,15 +372,12 @@ li > .link:focus {
   align-items: center;
   justify-content: center;
   color: var(--lightslate);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customer-icon {
   fill: currentColor;
-}
-
-.icon-link {
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-link:hover,
@@ -477,9 +445,6 @@ li > .link:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.footer-socmed-links {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -559,6 +524,10 @@ li > .link:focus {
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
+img {
+  display: block;
+}
+
 .product-card-image {
   position: relative;
   overflow: hidden;
@@ -580,13 +549,13 @@ li > .link:focus {
 }
 
 .product.link:hover .product-description,
-.product.link:hover .product-description {
+.product.link:focus .product-description {
   transform: translateY(0);
 }
 
 /* Modal Window */
 
-.modal-close {
+.backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -597,8 +566,55 @@ li > .link:focus {
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% -50%) scale(1);
+  width: 408px;
+  min-height: 584px;
+  background: var(--dairy);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+
+.modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cornflower);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  background-color: var(--ocean);
+  border: none;
+}
+
+.modal-close-svg {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  fill: var(--white);
 }
