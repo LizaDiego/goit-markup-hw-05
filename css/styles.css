@@ -152,10 +152,10 @@ li > .link:focus {
       rgba(46, 47, 66, 0.7)
     ),
     url(../images/people-office.jpg);
-  max-width: 1440px;
-  background-repeat: no-repeat, no-repeat;
-  background-position: center, center;
-  background-size: 1440px, 1440px;
+  max-width: 1440px 1440px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .hero-text {
