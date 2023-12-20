@@ -3,7 +3,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 /* Variables */
@@ -34,9 +33,6 @@ body {
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-}
-
-.logo {
   margin-right: 76px;
 }
 
@@ -65,7 +61,6 @@ body {
 
 .main-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 
@@ -79,7 +74,6 @@ body {
 .address {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .header-nav > .list {
@@ -106,18 +100,18 @@ body {
   background-color: var(--ocean);
   position: absolute;
   left: 0;
-  bottom: -28px;
+  bottom: -1px;
   height: 4px;
   width: 100%;
   border-radius: 2px;
 }
 
-.menu-nav-link:hover::after,
+/* .menu-nav-link:hover::after,
 .menu-nav-link:focus::after {
   border: 2px solid var(--ocean);
   background-color: var(--ocean);
   width: 100%;
-}
+} */
 
 /* Address */
 .address {
@@ -141,7 +135,7 @@ body {
   color: var(--ocean);
 }
 
-.contact-info {
+.contact-info > .link {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 li > .link:hover,
@@ -267,11 +261,7 @@ li > .link:focus {
 }
 
 .service-section {
-  padding: 120px;
-}
-
-.no-top-padding {
-  padding-top: 0;
+  padding: 120px 0;
 }
 
 .service.list {
@@ -550,7 +540,7 @@ img {
 
 .product.link:hover .product-description,
 .product.link:focus .product-description {
-  transform: translateY(0);
+  transform: translateY(0%);
 }
 
 /* Modal Window */
@@ -570,7 +560,7 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50% -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
   width: 408px;
   min-height: 584px;
   background: var(--dairy);
