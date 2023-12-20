@@ -33,6 +33,7 @@ body {
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  padding: 24px 0;
   margin-right: 76px;
 }
 
@@ -49,9 +50,6 @@ body {
 }
 
 /* Header */
-.header {
-  padding: 24px 0;
-}
 
 .header {
   border-bottom: 1px solid var(--cornflower);
@@ -81,12 +79,13 @@ body {
   gap: 40px;
 }
 
-.header-item > .link {
+.menu-nav-link {
   color: var(--navyblue);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  padding: 24px 0;
 }
 
 .menu-active.link {
@@ -130,14 +129,15 @@ body {
   letter-spacing: 0.02em;
 }
 
-.contact-info:hover,
+/* .contact-info:hover,
 .contact-info:focus {
   color: var(--ocean);
-}
+} */
 
-.contact-info > .link {
+.address-item > .link {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 li > .link:hover,
 li > .link:focus {
   color: var(--ocean);
