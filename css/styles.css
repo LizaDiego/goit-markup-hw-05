@@ -114,7 +114,7 @@ body {
   width: 100%;
 }
 
-/* Address */
+/* <-- Navigation contanct number and email --> */
 .address {
   font-style: normal;
 }
@@ -242,7 +242,7 @@ li > .link:focus {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -408,7 +408,6 @@ li > .link:focus {
 }
 
 /* <-- Section 5 vectors --> */
-
 .customer-gallery {
   padding: 120px 0;
 }
@@ -447,7 +446,6 @@ li > .link:focus {
 }
 
 /* <-- Footer with social media menu --> */
-
 .footer {
   background-color: var(--navyblue);
   padding: 100px 0;
