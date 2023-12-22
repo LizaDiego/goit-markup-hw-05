@@ -1,14 +1,10 @@
-/* Reset */
-
+/* CSS Reset */
 * {
   margin: 0;
   padding: 0;
 }
 
-img {
-  display: block;
-}
-/* Variables */
+/* Global Settings */
 :root {
   --iris: #4d5ae5;
   --ocean: #404bbf;
@@ -19,26 +15,13 @@ img {
   --cornflower: #e7e9fc;
   --lightslate: #8e8f99;
   --green: #31d0aa;
+  --dairy: #fcfcfc;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
   color: var(--slate);
   background-color: var(--white);
-}
-
-.logo {
-  color: var(--iris);
-  font-family: 'Raleway', sans-serif;
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 1.17;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
-.logo {
-  margin-right: 76px;
 }
 
 .link {
@@ -49,19 +32,28 @@ body {
   list-style: none;
 }
 
-/* Header */
-.header {
+/* WEBSTUDIO header logo */
+.logo {
+  color: var(--iris);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
   padding: 24px 0;
+  margin-right: 76px;
 }
 
+.studio-logo {
+  color: var(--navyblue);
+}
+
+/* Header top area */
 .header {
   border-bottom: 1px solid var(--cornflower);
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
-}
-
-.header-studio {
-  color: var(--navyblue);
 }
 
 .main-header {
@@ -86,20 +78,23 @@ body {
   gap: 40px;
 }
 
-.header-item > .menu-top {
+.menu-nav-link {
   color: var(--navyblue);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  padding: 24px 0;
 }
 
-/* .header-item {
+/* < -- Navigation active pages --> */
+.menu-active {
+  color: var(--ocean);
   position: relative;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.header-item::after {
+.menu-active::after {
   content: '';
   background-color: var(--ocean);
   position: absolute;
@@ -108,13 +103,18 @@ body {
   height: 4px;
   width: 100%;
   border-radius: 2px;
+  transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.address-item {
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-} */
+.menu-active:hover::after {
+  width: 100%;
+}
 
-/* Address */
+.menu-active::after {
+  width: 100%;
+}
+
+/* <-- Navigation contanct number and email --> */
 .address {
   font-style: normal;
 }
@@ -124,11 +124,20 @@ body {
   gap: 40px;
 }
 
-.address-item > .info {
+.address-item > .contact-info {
   color: var(--slate);
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+}
+
+.contact-info:hover,
+.contact-info:focus {
+  color: var(--ocean);
+}
+
+.address-item > .link {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 li > .link:hover,
@@ -136,7 +145,7 @@ li > .link:focus {
   color: var(--ocean);
 }
 
-/*  Section 1 */
+/* < --Section 1 hero page with modal button -- > */
 .hero {
   background-color: var(--navyblue);
   padding: 188px 0;
@@ -145,9 +154,9 @@ li > .link:focus {
       rgba(46, 47, 66, 0.7)
     ),
     url(../images/people-office.jpg);
-  max-width: 1440px;
-  background-repeat: no-repeat, no-repeat;
-  background-position: center, center;
+  max-width: 1440px 1440px;
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 }
 
@@ -161,7 +170,7 @@ li > .link:focus {
   margin: 0 auto 48px;
 }
 
-.button {
+.hero-button {
   background-color: var(--iris);
   color: var(--white);
   font-family: inherit;
@@ -176,14 +185,85 @@ li > .link:focus {
   border: none;
   border-radius: 4px;
   margin: 0 auto;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button:hover,
-.button:focus {
+.hero-button:hover,
+.hero-button:focus {
   background-color: var(--ocean);
 }
 
-/* Section 2 */
+/* <-- Modal window for hero section --> */
+.backdrop {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 408px;
+  min-height: 584px;
+  background: var(--dairy);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--cornflower);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--navyblue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  background-color: var(--ocean);
+  border: none;
+}
+
+.modal-close-svg {
+  width: 8px;
+  height: 10px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  fill: var(--white);
+}
+
+/* <-- Section 2 features -- > */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -240,7 +320,7 @@ li > .link:focus {
   color: var(--slate);
 }
 
-/* Section 3 */
+/* <-- Section 3 services --> */
 .section-title {
   text-align: center;
   color: var(--navyblue);
@@ -252,7 +332,7 @@ li > .link:focus {
 }
 
 .service-section {
-  padding: 120px;
+  padding: 120px 0;
 }
 
 .service.list {
@@ -263,8 +343,7 @@ li > .link:focus {
 .service-photo {
   flex-basis: calc((100% --48px) / 3);
 }
-/* Section 4 */
-/* Reused section 3 title */
+/* <-- Section 4 team profile --> */
 .team-section {
   background-color: var(--cloud);
   padding: 120px 0;
@@ -316,6 +395,7 @@ li > .link:focus {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socmed-icon-link:hover,
@@ -327,8 +407,7 @@ li > .link:focus {
   fill: var(--cloud);
 }
 
-/* Section 5 */
-
+/* <-- Section 5 vectors --> */
 .customer-gallery {
   padding: 120px 0;
 }
@@ -352,6 +431,8 @@ li > .link:focus {
   align-items: center;
   justify-content: center;
   color: var(--lightslate);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customer-icon {
@@ -364,8 +445,7 @@ li > .link:focus {
   color: var(--ocean);
 }
 
-/* Footer */
-
+/* <-- Footer with social media menu --> */
 .footer {
   background-color: var(--navyblue);
   padding: 100px 0;
@@ -423,6 +503,7 @@ li > .link:focus {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-socmed-links:hover,
@@ -434,7 +515,7 @@ li > .link:focus {
   fill: var(--cloud);
 }
 
-/* Portfolio Page */
+/* < -- Portfolio page with transitions -- > */
 .product-services {
   padding: 96px 0 120px 0;
 }
@@ -451,6 +532,10 @@ li > .link:focus {
   padding: 12px 24px;
   border: 1px solid var(--cornflower);
   border-radius: 4px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn.list {
@@ -467,6 +552,10 @@ li > .link:focus {
   border: 1px solid transparent;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+img {
+  display: block;
 }
 
 .product.list {
@@ -488,10 +577,36 @@ li > .link:focus {
 
 .product-info.link {
   display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.product-info.link:hover,
-.product-info.link:focus {
+.product-info:hover,
+.product-info:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.product-card-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-description {
+  position: absolute;
+  top: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--cloud);
+  padding: 40px 32px;
+  background-color: var(--iris);
+  height: 100%;
+  width: 100%;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-info.link:hover .product-description,
+.product-info.link:focus .product-description {
+  transform: translateY(0%);
 }

@@ -27,27 +27,27 @@
     <header class="header">
         <div class="main-header container">
             <nav class="header-nav">
-                <a class="logo link" href="./index.html">Web<span class="header-studio">Studio</span>
+                <a class="logo link" href="./index.html">Web<span class="studio-logo">Studio</span>
                 </a>
                 <ul class="header-menu list">
                     <li class="header-item">
-                        <a class="menu-top link" href="./index.html">Studio</a>
+                        <a class="menu-nav-link link menu-active" href="./index.html">Studio</a>
                     </li>
                     <li class="header-item">
-                        <a class="menu-top link" href="./portfolio.html">Portfolio</a>
+                        <a class="menu-nav-link link" href="./portfolio.html">Portfolio</a>
                     </li>
                     <li class="header-item">
-                        <a class="menu-top link" href="">Contacts</a>
+                        <a class="menu-nav-link link" href="">Contacts</a>
                     </li>
                 </ul>
             </nav>
             <address class="address">
-                <ul class="address list">
+                <ul class="contact list">
                     <li class="address-item">
-                        <a class="info link" href="mailto:info@devstudio.com">info@devstudio.com</a>
+                        <a class="contact-info link" href="mailto:info@devstudio.com">info@devstudio.com</a>
                     </li>
                     <li class="address-item">
-                        <a class="info link" href="tel:+110001111111">+11 (000) 111-11-11</a>
+                        <a class="contact-info link" href="tel:+110001111111">+11 (000) 111-11-11</a>
                     </li>
                 </ul>
             </address>
@@ -56,13 +56,11 @@
 
     <!-- Main with 5 sections -->
     <main>
-        <!-- Section 1 -->
+        <!-- Section 1 hero -->
         <section class="hero">
-            <div class="container">
-                <h1 class="hero-text">Effective Solutions for Your Business
-                </h1>
-                <button type="button" class="button">Order Service
-                </button>
+            <div class="container hero-container">
+                <h1 class="hero-text">Effective Solutions for Your Business</h1>
+                <button class="hero-button" type="button" data-modal-open>Order Service</button>
             </div>
         </section>
 
@@ -126,10 +124,10 @@
             </div>
         </section>
 
-        <!-- Section 3 Services -->
+        <!-- Section 3 services -->
         <section class="service-section">
             <div class="container">
-                <h2 class="section-title">What are we doing</h2>
+                <h2 class="section-title no-top-padding">What are we doing</h2>
                 <ul class="service list">
                     <li class="service-photo">
                         <img src="./images/desktop-monitor.jpg" width="360" alt="desktop-monitor" />
@@ -144,7 +142,7 @@
             </div>
         </section>
 
-        <!-- Section 4 Team Profile -->
+        <!-- Section 4 team profile -->
         <section class="team-section">
             <div class="container">
                 <h2 class="section-title">Our Team</h2>
@@ -320,7 +318,7 @@
                 </ul>
             </div>
         </section>
-        <!-- Section 5 Customer Gallery -->
+        <!-- Section 5 client gallery -->
         <section class="customer-gallery">
             <div class="container">
                 <h2 class="section-title">Customers</h2>
@@ -425,8 +423,17 @@
             </div>
         </div>
     </footer>
-    <!-- JS for modal window -->
-    <script src="./js/modal.js"></script>
+    <!-- JS data modal -->
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button class="modal-close" type="button" data-modal-close>
+                <svg class="modal-close-svg" xmlns="http://www.w3.org/2000/svg" width="8" height="8">
+                    <use href="./images/SVG-sprite-icons.svg#modal-close"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <script src="./modal.js"></script>
 </body>
 
 </html>
