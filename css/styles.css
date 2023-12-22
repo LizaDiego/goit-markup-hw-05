@@ -447,6 +447,11 @@ li > .link:focus {
 }
 
 /* <-- Footer with social media menu --> */
+/* .row {
+    display: flex;
+    flex-direction: row;
+} */
+
 .footer {
   background-color: var(--navyblue);
   padding: 100px 0;
